@@ -15,6 +15,9 @@ gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 gem "bootsnap", ">= 1.4.4", require: false
 gem "faker"
+gem "devise", git: "https://github.com/heartcombo/devise", branch: "main"
+gem "friendly_id"
+gem "name_of_person"
 
 group :development, :test do
   gem "debug", ">= 1.0.0", platforms: %i[mri mingw x64_mingw]
@@ -26,6 +29,9 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console", ">= 4.1.0"
+  gem "fuubar", "~> 2.5", ">= 2.5.1"
+  gem "guard", "~> 2.17"
+  gem "guard-rspec", "~> 4.7", ">= 4.7.3"
   gem "rubocop"
   gem "rubocop-rails"
   gem "rubocop-rspec"
@@ -37,5 +43,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "simplecov"
-  gem "fuubar"
 end
