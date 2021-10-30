@@ -16,6 +16,8 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 gem "bootsnap", ">= 1.4.4", require: false
 gem "faker"
 gem "devise", git: "https://github.com/heartcombo/devise", branch: "main"
+gem "friendly_id"
+gem "name_of_person"
 
 group :development, :test do
   gem "debug", ">= 1.0.0", platforms: %i[mri mingw x64_mingw]
