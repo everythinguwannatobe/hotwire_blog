@@ -29,6 +29,9 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console", ">= 4.1.0"
+  gem "fuubar", "~> 2.5", ">= 2.5.1"
+  gem "guard", "~> 2.17"
+  gem "guard-rspec", "~> 4.7", ">= 4.7.3"
   gem "rubocop"
   gem "rubocop-rails"
   gem "rubocop-rspec"
@@ -40,5 +43,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
   gem "simplecov"
-  gem "fuubar"
 end
