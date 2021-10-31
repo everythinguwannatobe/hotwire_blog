@@ -5,6 +5,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require "rspec/rails"
 require "capybara/rails"
 require "fuubar"
+require "action_text/system_test_helper"
 
 Dir[Rails.root.join("spec", "support", "**", "*.rb")].sort.each { |f| require f }
 
@@ -18,8 +19,10 @@ end
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.include Warden::Test::Helpers
+  config.include ActionText::SystemTestHelper
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+  config.backtrace_exclusion_patterns = [/gems/]
   config.fuubar_progress_bar_options = {format: "Completed Tests <%B> %p%% %a"}
 end

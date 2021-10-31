@@ -25,6 +25,15 @@
           null,
           1,
           null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
           null,
           null,
           null,
@@ -669,6 +678,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           null,
@@ -683,6 +693,8 @@
           null,
           1,
           null,
+          null,
+          1,
           null,
           1,
           null,
@@ -722,10 +734,77 @@
           null
         ]
       },
-      "/Users/chucksmith/code/ruby_rails_learning/hotwire_blog_app/app/controllers/static_controller.rb": {
+      "/Users/chucksmith/code/ruby_rails_learning/hotwire_blog_app/app/models/article.rb": {
         "lines": [
           1,
           1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/chucksmith/code/ruby_rails_learning/hotwire_blog_app/app/controllers/articles_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          4,
+          2,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          1,
+          3,
+          2,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          7,
+          null,
+          null,
+          null,
+          1,
+          7,
           null,
           null
         ]
@@ -751,6 +830,14 @@
           null
         ]
       },
+      "/Users/chucksmith/code/ruby_rails_learning/hotwire_blog_app/app/controllers/static_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/chucksmith/code/ruby_rails_learning/hotwire_blog_app/app/controllers/users_controller.rb": {
         "lines": [
           1,
@@ -768,6 +855,6 @@
         ]
       }
     },
-    "timestamp": 1635623608
+    "timestamp": 1635692644
   }
 }

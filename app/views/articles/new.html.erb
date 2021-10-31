@@ -1,0 +1,13 @@
+<div class="row flex-column justify-content-center align-content-center mt-5">
+  <div class="col-md-12">
+    <div class="card col-md-8 mx-auto shadow-sm p-3">
+      <h1 class="card-title text-center">New article</h1>
+
+      <%= render "form", article: @article %>
+
+      <div>
+        <%= link_to "Back to articles", articles_path %>
+      </div>
+    </div>
+  </div>
+</div>
