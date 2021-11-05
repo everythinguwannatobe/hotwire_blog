@@ -1,15 +1,10 @@
-<div id="<%= dom_id article %>" class="scaffold_record">
-  <p>
-    <strong>Title:</strong>
-    <%= article.title %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= article.user_id %>
-  </p>
-
-  <p>
-    <%= link_to "Show this article", article %>
-  </p>
-</div>
+<article id="<%= dom_id(article) %>">
+  <h2><%= link_to article.title, article_path(article) %></h2>
+  Last updated: <%= article.created_at %>
+  <p><%= article.body %></p>
+  <div>
+    <%= link_to "Edit", edit_article_path(article) %> |
+    <%= link_to "Delete", article, method: :delete, data: { confirm: "Are you sure? "} %>
+  </div>
+</article>
+<hr/>

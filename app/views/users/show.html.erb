@@ -1,3 +1,30 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row justify-content-md-center">
+  <div class="col-12 bg-white p-4">
+    <div class="d-flex justify-content-center">
+      <%= image_tag avatar_path(Current.user), width: 80, height: 80, class: "rounded-circle me-2" %>
+      <div class="">
+        <h1 class="mb-0"><%= Current.user.name %></h1>
+        <%= link_to "Edit profile", edit_user_registration_path, class: "btn btn-link ms-4 p-0 border-0" %>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="offset-1 col-10">
+        <% if @user.articles.any? %>
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h1>User Article's</h1>
+            <%= link_to "New Article", new_article_path, class: "btn btn-primary" %>
+          </div>
+          <hr/>
+          <% @user.articles.each do |article| %>
+            <%= render partial: "articles/article", locals: { article: article } %>
+          <% end %>
+        <% else %>
+          You have not published articles at this time
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
 
