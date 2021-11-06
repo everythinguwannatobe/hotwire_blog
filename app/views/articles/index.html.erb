@@ -6,4 +6,5 @@
   <%= render @articles %>
 </div>
 
-<%= link_to "New article", new_article_path %>
+<%#= link_to "New article", new_article_path %>
+<%= pagy_bootstrap_nav(@pagy).html_safe %>
