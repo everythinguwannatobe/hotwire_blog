@@ -3,7 +3,7 @@
   Author: <%= article.user.name %> | Posted: <%= article.created_at %>
   <p><%= article.body %></p>
   <div>
-    <% if article.user.id == current_user.id %>
+    <% if user_signed_in? && article.user.id == current_user.id %>
       <%= link_to "Edit", edit_article_path(article) %> |
       <%= link_to "Delete", article, method: :delete, data: { confirm: "Are you sure? " } %>
     <% end %>

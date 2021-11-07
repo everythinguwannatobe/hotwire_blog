@@ -18,14 +18,14 @@ User.create!(
 )
 
 # Articles for primary user
-(1..20).each do |id|
-  Article.create!(
-    id: id,
-    title: Faker::Book.unique.title,
-    body: Faker::Lorem.paragraph(sentence_count: 8),
-    user_id: User.first.id
-  )
-end
+# (1..20).each do |id|
+#   Article.create!(
+#     id: id,
+#     title: Faker::Book.unique.title,
+#     body: Faker::Lorem.paragraph(sentence_count: 8),
+#     user_id: User.first.id
+#   )
+# end
 
 # Generate a bunch of users
 30.times do |n|
@@ -42,7 +42,7 @@ end
 
 # Generate microposts for a subset of users.
 users = User.order(:created_at).take(6)
-50.times do
+10.times do
   body = Faker::Lorem.sentence(word_count: 5)
   title = Faker::Book.unique.title
   users.each { |user| user.articles.create!(title: title, body: body) }

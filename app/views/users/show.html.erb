@@ -16,7 +16,7 @@
             <%= link_to "New Article", new_user_article_path(current_user.id), class: "btn btn-primary" %>
           </div>
           <hr/>
-          <% @user.articles.each do |article| %>
+          <% @user.articles.order(created_at: :desc).each do |article| %>
             <%= render partial: "articles/article", locals: { article: article } %>
           <% end %>
         <% else %>
