@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 
+# Primary user
 User.create!(
   id: 1,
   first_name: "Chuck",
@@ -16,7 +17,8 @@ User.create!(
   password_confirmation: "123456"
 )
 
-(1..30).each do |id|
+# Articles for primary user
+(1..20).each do |id|
   Article.create!(
     id: id,
     title: Faker::Book.unique.title,
@@ -25,3 +27,23 @@ User.create!(
   )
 end
 
+# Generate a bunch of users
+30.times do |n|
+  name = Faker::Name.unique.name
+  email = "example-#{n + 1}@example.com"
+  password = "password"
+  User.create!(
+    name: name,
+    email: email,
+    password: password,
+    password_confirmation: password
+  )
+end
+
+# Generate microposts for a subset of users.
+users = User.order(:created_at).take(6)
+50.times do
+  body = Faker::Lorem.sentence(word_count: 5)
+  title = Faker::Book.unique.title
+  users.each { |user| user.articles.create!(title: title, body: body) }
+end

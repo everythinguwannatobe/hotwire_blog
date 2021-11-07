@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Article</h1>
+<h1 class="text-center mb-2">Articles</h1>
 
 <div id="articles">
-  <%= render @articles %>
+  <% @articles.order(created_at: :desc).each do |article| %>
+    <%= render partial: "articles/excerpt", locals: { article: article } %>
+  <% end %>
 </div>
 
 <%#= link_to "New article", new_article_path %>

@@ -22,9 +22,10 @@ class ArticlesController < ApplicationController
   # POST /articles
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
 
     if @article.save
-      redirect_to @article, notice: "Article was successfully created."
+      redirect_to user_path(current_user), notice: "Article was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
