@@ -1,0 +1,36 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-5 mx-auto">
+        <div class="card shadow-sm">
+          <div class="card-body p-5">
+            <span class="text-muted" data-config-id="caption">Sign Up</span>
+            <h3 class="fw-bold mb-3" data-config-id="form-header">Create new account</h3>
+            <% if @user.errors.any? %>
+              <div class="alert alert-danger" role="alert">
+                <ul>
+                  <% @user.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <%= form_with model: @user do |form| %>
+              <%= form.text_field :name, class: 'form-control mb-3', placeholder: 'Name' %>
+              <%= form.email_field :email, class: 'form-control mb-3', placeholder: 'E-mail Address' %>
+              <%= form.password_field :password, class: 'form-control mb-3', placeholder: 'Password' %>
+              <%= form.password_field :password_confirmation, class: 'form-control mb-3', placeholder: 'Password confirmation' %>
+              <%= form.submit 'Sign Up', class: 'btn btn-primary py-2 w-100 mb-3' %>
+            <% end %>
+
+            <p class="text-muted">
+              <small>
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

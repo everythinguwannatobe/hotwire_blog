@@ -1,9 +1,14 @@
-<article id="<%= dom_id(article) %>" class="mb-3">
-  <h2><%= link_to article.title, article_path(article) %></h2>
-  Last updated: <%= article.created_at %>
-  <p><%= article.body %></p>
-  <div>
-    <%= link_to "Edit", edit_article_path(article) %> |
-    <%= link_to "Delete", article, method: :delete, data: { confirm: "Are you sure? " } %>
-  </div>
-</article>
+<%= turbo_frame_tag dom_id(article) do %>
+  <article id="<%= dom_id(article) %>" class="mb-3">
+    <h2><%= link_to article.title, article_path(article) %></h2>
+    Last updated: <%= article.created_at %>
+    <p><%= article.body %></p>
+    <div>
+      <% if logged_in? == true %>
+        <%= link_to "Edit", edit_user_article_path(current_user, article) %> |
+        <%= link_to "Delete", article, method: :delete, data: { confirm: "Are you sure? " } %>
+      <% end %>
+    </div>
+  </article>
+<% end %>
+

@@ -10,8 +10,7 @@ require "faker"
 # Primary user
 User.create!(
   id: 1,
-  first_name: "Chuck",
-  last_name: "Smith",
+  name: "Example User",
   email: "user@example.com",
   password: "123456",
   password_confirmation: "123456"
@@ -28,7 +27,7 @@ User.create!(
 # end
 
 # Generate a bunch of users
-30.times do |n|
+10.times do |n|
   name = Faker::Name.unique.name
   email = "example-#{n + 1}@example.com"
   password = "password"

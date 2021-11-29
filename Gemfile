@@ -15,10 +15,9 @@ gem "redis", "~> 4.0"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 gem "bootsnap", ">= 1.4.4", require: false
 gem "faker"
-gem "devise", git: "https://github.com/heartcombo/devise", branch: "main"
-gem "friendly_id"
-gem "name_of_person"
-gem 'pagy', '~> 5.1', '>= 5.1.3'
+gem "pagy", "~> 5.1", ">= 5.1.3"
+gem "friendly_id", "~> 5.4", ">= 5.4.2"
+gem "sorcery"
 
 group :development, :test do
   gem "debug", ">= 1.0.0", platforms: %i[mri mingw x64_mingw]

@@ -1,0 +1,33 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-5 mx-auto">
+        <div class="card shadow-sm">
+          <div class="card-body p-5">
+            <span class="text-muted d-flex justify-content-center" data-config-id="caption">Sign In</span>
+            <h3 class="fw-bold mb-5 d-flex justify-content-center" data-config-id="form-header">Log into your account</h3>
+
+            <%= form_with url: session_path do |form| %>
+              <%= form.text_field :email, class: 'form-control mb-2', placeholder: 'E-mail Address' %>
+              <%= form.password_field :password, class: 'form-control mb-2', placeholder: 'Password' %>
+
+              <label class='mb-3'>
+                <%= form.check_box :remember_me, class: 'form-check-input me-2' %>
+                <small class='text-muted'>Remember Me</small>
+              </label>
+
+              <%= form.submit 'Sign In', class: 'btn btn-primary py-2 w-100 mb-3' %>
+            <% end %>
+
+            <p class="text-muted">
+              <small>
+                Need an account?
+                <%= link_to 'Sign Up', new_user_path %>
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
